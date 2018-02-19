@@ -49,6 +49,7 @@ class Order extends Component {
 
   // save comments
   commentChange = (e) => {
+    console.log('test')
     let feedbackObj = {}
     feedbackObj['ratable_id'] = e.target.className.split(" ")[0]
     if (parseInt(feedbackObj['ratable_id']) > 120) {
@@ -115,7 +116,7 @@ class Order extends Component {
 
     // feedback button
     let buttonLogic = true
-    console.log(feedbacksQuery)
+    // console.log(feedbacksQuery)
     if (feedbacksQuery && feedbacksQuery.loading) {
       return <div>Loading....</div>
     }
@@ -161,7 +162,7 @@ class Order extends Component {
 
                 <FormGroup>
                   <Label for="comment"></Label>
-                  <Input className={id} type="text" name="comment" id="comment" placeholder="Feel free to leave us a comment...." onChange={this.commentChange} />
+                  <Input className={id} type="text" name="comment" id="comment" placeholder="Feel free to leave us a comment...." onBlur={this.commentChange} />
                 </FormGroup>
 
                 { items }

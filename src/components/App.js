@@ -7,7 +7,7 @@ import gql from 'graphql-tag'
 
 import Order from './Order'
 
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 class App extends Component {
   // feedback = async (id) => {

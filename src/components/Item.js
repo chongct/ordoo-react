@@ -21,7 +21,7 @@ class Item extends Component {
 
         <FormGroup>
           <Label for="comment">Comments</Label>
-          <Input className={this.props.id} type="text" name="comment" id="comment" placeholder="Feel free to leave us a comment...." onChange={(e) => this.props.commentChange(e)} />
+          <Input className={this.props.id} type="text" name="comment" id="comment" placeholder="Feel free to leave us a comment...." onBlur={(e) => this.props.commentChange(e)} />
         </FormGroup>
       </div>
     )
