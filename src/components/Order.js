@@ -107,9 +107,11 @@ class Order extends Component {
     // console.log(this.props)
     const { serving_datetime, order_items, order_id, id, feedbacksQuery } = this.props
 
-    let date = serving_datetime.split("T")[0]
-    let timeString = serving_datetime.split("T")[1]
-    let time = `${timeString.split(":")[0]}:${timeString.split(":")[1]} - ${timeString.split(":")[0]}:${parseInt(timeString.split(":")[1]) + 30}`
+    let dateObj = new Date(Date.parse(serving_datetime))
+    // console.log(dateObj)
+
+    let date = `${dateObj.getUTCFullYear()}-${dateObj.getUTCMonth() + 1}-${dateObj.getUTCDate()}`
+    let time = `${dateObj.getUTCHours()}:0${dateObj.getUTCMinutes()} - ${dateObj.getUTCHours()}:${dateObj.getUTCMinutes() + 30}`
 
     // order_items
     let items = order_items.map(item => <Item key={item.id} ratingChange={this.ratingChange} commentChange={this.commentChange} {...item}/>)
