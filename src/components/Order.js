@@ -87,6 +87,7 @@ class Order extends Component {
   }
 
   submitForm = async (e) => {
+    this.toggle()
     e.preventDefault()
     await this.merge()
     console.log(this.state)
